@@ -1,0 +1,40 @@
+﻿INSTALLATION
+
+
+1-legen sie ein verzeichnis c:\kreisoffenbach\klenk an
+2-kopieren sie alle dateien in dieses verzeichnis
+3-legen sie einen shortcut auf den desktop
+
+
+TIPPS
+
+ZUM BÜRGERGIS
+- wenn sie als hintergrund das LUFTBILD haben, dann
+       können die  ""grundstücksgrenzen weiß"" in den vordergrund legen
+- wenn sie als hintergrund den STADTPLAN haben, dann
+       können die  ""grundstücksgrenzen schwarz"" in den vordergrund legen
+- machen sie grundstückskarte DB-aktiv indem sie den mittleren Radiobutton aktivieren
+- Sie finden diese Tehmen unter ALLGEMEINES
+
+ZUR EIGENTÜMERABFRAGE
+- am schnellsten geht die abfrage über die FS spalte. deren inhalt wird im Bürgergis 
+angezeigt. Kopieren sie die FS ins clipboard und fügen sie sie in die eigentümerabfrage ein.
+- ein klick auf die gefundene zeile kopiert den schmodder in die zwischenablage, sie können 
+  es dann in andere dokumente pasten.
+  
+  
+Bei Problemen mit der Eigentümerabfrage
+
+ 
+Telefon: +49(62 52) 127-0
+Fax: +49(62 52) 127-8090
+E-Mail: info.afb-heppenheim@hvbg.hessen.de
+
+Kundenservice
+Frau Sperling, Telefon: +49(62 52) 1 27-8011
+Herr Vuong, Telefon: +49(62 52) 1 27-8010
+Frau Diehl, Telefon: +49(62 52) 1 27-8014
+Frau Bartzok, Telefon: +49(62 52) 1 27-8012
+
+E-Mail: kundenservice.afb-heppenheim@hvbg.hessen.de
+

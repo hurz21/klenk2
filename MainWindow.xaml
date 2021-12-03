@@ -1,0 +1,164 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:klenkGmbh"
+        mc:Ignorable="d" Background="LightGray" WindowStartupLocation="CenterScreen"
+        Title="Klenk-Eigentümersuche (c)  Dr. Feinen, Kreis Offenbach 2021" Height="450" Width="884.395" SizeChanged="resize">
+    <DockPanel>
+        <StackPanel Name="spTools" DockPanel.Dock="Top">
+            <StackPanel Margin="5">
+                <TabControl Background="LightGray">
+      
+                    <TabItem Header="FS suchen">
+                        <StackPanel   Orientation="Horizontal" Margin="5">
+                            <StackPanel Orientation="Horizontal" Margin="5"  Height="25">
+                                <Label Width="80" >FS:</Label>
+                                <TextBox Width="190" Name="tbFS" IsEnabled="true" ToolTip="21 chars"
+                                                  Text="FS0607290100020000000"      Height="20"                  
+                                     />
+                            </StackPanel>
+                            <GroupBox>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Name="btnsuche2" Click="btnsuche2_Click" Content="Suchen" Margin="5"></Button>
+                                    <Button    Click="BtnWeb_Click" Margin="5"  Width="60" ToolTip="">Bürgergis</Button>
+                                    <Button    Click="BtnGM_Click" Margin="5"  Width="60" ToolTip="">GMaps</Button>
+                                    <Button    Click="Btn3d_Click" Margin="5"  Width="60" ToolTip="">G3D</Button>
+                                    <Button    Click="Btngp_Click" Margin="5"  Width="60" ToolTip="Hier finden Sie die tagesaktuelle Flurstückkarte">Geoportal</Button>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Detailsuche"> 
+                        <StackPanel   Orientation="Horizontal" Margin="5">
+                            <StackPanel Orientation="Horizontal" Margin="5"  Height="25">
+                                <Label Width="80" >Gemarkung:</Label>
+                                <TextBox Width="86" Name="tbGemarkung" IsEnabled="true"
+                                                  Text=""      Height="20"                  
+                                     />
+                                <ComboBox Name="cmbgemarkung" ItemsSource="{Binding}" 
+                                      Height="20"    DisplayMemberPath="buch"  SelectedValuePath="adress" 
+                                      Width="20" SelectionChanged="cmbgemarkung_SelectionChanged"
+                                      >
+                                    <!--<ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Key}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>-->
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="25">
+                                <TextBlock Width="35" Padding="5">Flur:</TextBlock>
+                                <TextBox Width="30" Name="tbflur" IsEnabled="true"     Text=""       Height="20"
+                                     />
+                                <ComboBox Name="cmbFlur" ItemsSource="{Binding}" 
+                                      DisplayMemberPath="buch"  SelectedValuePath="adress" 
+                                      Width="20"  Height="20"
+                                          SelectionChanged="cmbFlur_SelectionChanged"
+                                      ></ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="25">
+                                <Label Width="50">Zähler:</Label>
+                                <TextBox Width="38" Name="tbZaehler" IsEnabled="true"     Text=""       Height="20"
+                               
+                                     />
+                                <ComboBox Name="cmbZaehler" ItemsSource="{Binding}" 
+                                      DisplayMemberPath="buch"  SelectedValuePath="adress" 
+                                      Width="20"  Height="20"
+                                          SelectionChanged="cmbZaehler_SelectionChanged"
+                                      ></ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="25">
+                                <Label Width="50">Nenner:</Label>
+                                <TextBox Width="44"  Name="tbNenner" IsEnabled="true" 
+                                     Height="20"
+                                     
+                                     
+                                     />
+                                <ComboBox Name="cmbNenner" ItemsSource="{Binding}" 
+                                    DisplayMemberPath="buch"  SelectedValuePath="adress" 
+                                      Width="20"  Height="20"
+                                          SelectionChanged="cmbNenner_SelectionChanged"
+                                      ></ComboBox>
+                            </StackPanel>
+                           
+                            <GroupBox>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Name="btnsuche" Click="btnsuche_Click" Content="Suchen" Margin="5"></Button>
+                                    <Button    Click="BtnWeb_Click" Margin="5"  Width="60" ToolTip="bla">Bürgergis</Button>
+                                    <Button    Click="BtnGM_Click" Margin="5"  Width="60" ToolTip="bla">GMaps</Button>
+                                    <Button    Click="Btn3d_Click" Margin="5"  Width="60" ToolTip="bla">G3D</Button>
+                                    <Button    Click="Btngp_Click" Margin="5"  Width="60" ToolTip="Hier finden Sie die tagesaktuelle Flurstückkarte">Geoportal</Button>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel> 
+                    </TabItem>
+                    <TabItem Header="Optionen">
+                        <StackPanel   Orientation="Horizontal" Margin="5">
+                            <StackPanel Orientation="Horizontal" Margin="5"  Height="25">
+                                <Label Width="80" >Logfiles:</Label>
+                                <Button Name="btnLogfilesdir" Click="btnLogfilesdir_Click" >
+                                    Zeige Logfiles
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="spErgenis" Margin="0,0.333,0,60.667" Width="743">
+            <TextBox Name="tbInfo" Height="50" Width="600" Margin="5" Visibility="Collapsed"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                          Height="220"  Width="760"  Name="scv">
+
+                <DataGrid  x:Name="dg1" Height="200" Width="740"  ItemsSource="{Binding ''}"   
+                                               VirtualizingStackPanel.IsVirtualizing="True" EnableRowVirtualization="True" 
+                                               EnableColumnVirtualization="True"
+                                  CanUserAddRows="False"  
+                                  SelectionMode="Single" 
+                                  SelectionUnit="FullRow" 
+                  AutoGenerateColumns="False"
+                        MinRowHeight="100"
+                                  SelectionChanged="dg1_SelectionChanged" 
+                                           
+                                               FontWeight="Normal" 
+                                      >
+
+                    <DataGrid.Columns>
+
+
+                        <DataGridTextColumn Header="Gemarkung" Width="50"  Binding="{Binding gemarkung}" ToolTipService.ToolTip="Quelle"/>
+                        <DataGridTextColumn Header="Flur" Width="10"  Binding="{Binding flur}" ToolTipService.ToolTip="Quelle"/>
+                        <DataGridTextColumn Header="Z" Width="30"  Binding="{Binding zaehler}" ToolTipService.ToolTip="Quelle"/>
+                        <DataGridTextColumn Header="N" Width="30"  Binding="{Binding nenner}" ToolTipService.ToolTip="Quelle"/>
+
+                        <DataGridTextColumn Header="Adresse" MaxWidth="600"  Binding="{Binding adress}" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="ToolTip" Value="{Binding adress}"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+
+                        <DataGridTextColumn Header="Buchblatt" MaxWidth="600" Binding="{Binding buch}" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextWrapping" Value="NoWrap"/>
+                                    <Setter Property="ToolTip" Value="{Binding buch}"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+        </StackPanel>
+    </DockPanel>
+</Window>

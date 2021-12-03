@@ -1,0 +1,26 @@
+﻿DefaultSource	Information	0	Start 21.09.2021 09:39:35
+DefaultSource	Information	0	initgemarkung
+DefaultSource	Information	0	getGemarkungen
+DefaultSource	Information	0	getGemarkungen ok 32 spalte: gemarkung
+DefaultSource	Information	0	ladevorgang fertig
+DefaultSource	Information	0	cmbgemarkung_SelectionChanged
+DefaultSource	Information	0	flurinit
+DefaultSource	Information	0	getGemarkungen
+DefaultSource	Information	0	getGemarkungen ok 12 spalte: flur
+DefaultSource	Information	0	flurinit ok 12
+DefaultSource	Information	0	cmbFlur_SelectionChanged 
+DefaultSource	Information	0	zaehlerinit 
+DefaultSource	Information	0	getGemarkungen
+DefaultSource	Information	0	getGemarkungen ok 296 spalte: z
+DefaultSource	Information	0	zaehlerinit ok
+DefaultSource	Information	0	cmbFlur_SelectionChanged ok
+DefaultSource	Information	0	cmbZaehler_SelectionChanged 
+DefaultSource	Information	0	nennerinit 
+DefaultSource	Information	0	getGemarkungen
+DefaultSource	Information	0	getGemarkungen ok 2 spalte: n
+DefaultSource	Information	0	nennerinit ok
+DefaultSource	Information	0	cmbZaehler_SelectionChanged ok
+DefaultSource	Information	0	cmbNenner_SelectionChanged
+DefaultSource	Information	0	selectAndShow
+DefaultSource	Information	0	getRecordCollection   
+DefaultSource	Information	0	getRecordCollection ok 
