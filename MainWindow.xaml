@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:klenkGmbh"
         mc:Ignorable="d" Background="LightGray" WindowStartupLocation="CenterScreen"
-        Title="Klenk-Eigentümersuche (c)  Dr. Feinen, Kreis Offenbach 2021" Height="450" Width="884.395" SizeChanged="resize">
+        Title="Klenk-Eigentümersuche (c)  Dr. Feinen, Kreis Offenbach 2021" Height="450" Width="800" SizeChanged="resize">
     <DockPanel>
         <StackPanel Name="spTools" DockPanel.Dock="Top">
             <StackPanel Margin="5">
                 <TabControl Background="LightGray">
-      
+
                     <TabItem Header="FS suchen">
                         <StackPanel   Orientation="Horizontal" Margin="5">
                             <StackPanel Orientation="Horizontal" Margin="5"  Height="25">
@@ -22,15 +22,26 @@
                             <GroupBox>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Name="btnsuche2" Click="btnsuche2_Click" Content="Suchen" Margin="5"></Button>
-                                    <Button    Click="BtnWeb_Click" Margin="5"  Width="60" ToolTip="">Bürgergis</Button>
-                                    <Button    Click="BtnGM_Click" Margin="5"  Width="60" ToolTip="">GMaps</Button>
-                                    <Button    Click="Btn3d_Click" Margin="5"  Width="60" ToolTip="">G3D</Button>
-                                    <Button    Click="Btngp_Click" Margin="5"  Width="60" ToolTip="Hier finden Sie die tagesaktuelle Flurstückkarte">Geoportal</Button>
+                                    <Button    Click="BtnWeb_Click" Margin="5"  Width="60" ToolTip="bla">Bürgergis</Button>
+                                    <Button    Click="BtnGM_Click" Margin="5"  Width="60" ToolTip="bla">GMaps</Button>
+                                    <Button    Click="Btn3d_Click" Margin="5"  Width="60" ToolTip="bla">G3D</Button>
                                 </StackPanel>
                             </GroupBox>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Detailsuche"> 
+                    <TabItem Header="Namenssuche">
+                        <StackPanel   Orientation="Horizontal" Margin="5">
+                            <StackPanel Orientation="Horizontal" Margin="5"  Height="25">
+                                <Label Width="80" >Name:</Label>
+                                <TextBox Width="86" Name="tbSuchename" IsEnabled="true"
+                                                  Text=""      Height="20"                  
+                                     />
+
+                                <Button Click="btnSucheName"  Margin="1"  Width="60">Suchen</Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Detailsuche">
                         <StackPanel   Orientation="Horizontal" Margin="5">
                             <StackPanel Orientation="Horizontal" Margin="5"  Height="25">
                                 <Label Width="80" >Gemarkung:</Label>
@@ -84,17 +95,16 @@
                                           SelectionChanged="cmbNenner_SelectionChanged"
                                       ></ComboBox>
                             </StackPanel>
-                           
+
                             <GroupBox>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Name="btnsuche" Click="btnsuche_Click" Content="Suchen" Margin="5"></Button>
                                     <Button    Click="BtnWeb_Click" Margin="5"  Width="60" ToolTip="bla">Bürgergis</Button>
                                     <Button    Click="BtnGM_Click" Margin="5"  Width="60" ToolTip="bla">GMaps</Button>
                                     <Button    Click="Btn3d_Click" Margin="5"  Width="60" ToolTip="bla">G3D</Button>
-                                    <Button    Click="Btngp_Click" Margin="5"  Width="60" ToolTip="Hier finden Sie die tagesaktuelle Flurstückkarte">Geoportal</Button>
                                 </StackPanel>
                             </GroupBox>
-                        </StackPanel> 
+                        </StackPanel>
                     </TabItem>
                     <TabItem Header="Optionen">
                         <StackPanel   Orientation="Horizontal" Margin="5">
@@ -110,7 +120,7 @@
 
             </StackPanel>
         </StackPanel>
-        <StackPanel x:Name="spErgenis" Margin="0,0.333,0,60.667" Width="743">
+        <StackPanel x:Name="spErgenis">
             <TextBox Name="tbInfo" Height="50" Width="600" Margin="5" Visibility="Collapsed"/>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                           Height="220"  Width="760"  Name="scv">

@@ -300,10 +300,26 @@ Class MainWindow
         Process.Start(appVerzeichnis)
     End Sub
 
-    Private Sub Btngp_Click(sender As Object, e As RoutedEventArgs)
+    Private Sub btnSucheName(sender As Object, e As RoutedEventArgs)
+
         e.Handled = True
-        Process.Start("https://www.geoportal.hessen.de/map?LAYER[visible]=1&LAYER[querylayer]=1&LAYER=1&LAYER=38415&LAYER=0&LAYER=0") ' & tbGemarkung.Text)
-        e.Handled = True
+        l("btnsuche3_Click")
+        Dim aktcoll As New List(Of eigentuemerItem)
+        If tbSuchename.Text = String.Empty Then
+            MsgBox("Bitte name eingeben!")
+            Exit Sub
+        End If
+        Dim sql As String
+        sql = "select * from dbo_ALKIS_FS2EIGENTUEMER where adress='" & tbSuchename.Text & "'   ;"
+        sql = "select * from dbo_ALKIS_FS2EIGENTUEMER where adress like '%" & tbSuchename.Text.Trim & "%'   ;"
+        aktcoll.Clear()
+        Dim db As New clsDB
+        aktcoll = db.getRecordCollection(sql)
+        db = Nothing
+        dg1.DataContext = aktcoll
+        dg1.Width = Me.ActualWidth - 20
+        dg1.Height = Me.ActualHeight - 90
+        l("btnsuche2_Click ok")
     End Sub
     'https://www.google.com/maps/@50.0173935,8.8843946,483a,35y,41.42t/data=!3m1!1e3
 
